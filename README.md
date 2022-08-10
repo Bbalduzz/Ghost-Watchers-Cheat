@@ -24,7 +24,7 @@ As for now I haven't made an injector, so a monoinjector is needed.
 8. Set: `Method Name` = `Init`
 9. Click Inject
 
-## Note
+### Note
 - The code needs a in-depth clean up (too lazy to do it)
 - This project is still under developement, i'm working to add new things
 

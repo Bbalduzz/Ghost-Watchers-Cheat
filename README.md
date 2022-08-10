@@ -1,5 +1,5 @@
 # Ghost Watchers ESP
-Simple internal cheat for Ghost Watchers made in c#.
+Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regularly
 
 🎈 If u wanto to join the development, share ideas or u are just curios, join the discord: https://discord.gg/6AEdmkXUbS
 

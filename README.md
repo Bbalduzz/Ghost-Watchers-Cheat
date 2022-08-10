@@ -7,7 +7,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 - Ghost ESP
 - Ghost infos
 - Players ESP
-- Eject pressing "J"
+- Eject by pressing "J"
 
 ### Preview
 ![ghostwatchersESP](https://user-images.githubusercontent.com/81587335/183890235-07917b5f-34a9-4286-9429-bb38c3fa8895.png)

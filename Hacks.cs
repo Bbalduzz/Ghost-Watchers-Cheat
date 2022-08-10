@@ -52,7 +52,6 @@ namespace GhostWatchersESP
         public string GetGhostName(string ghosttype)
         {
             if (ghosttype.Contains("Poltergeist")):
-                ESP_Models.Poltergeist.show_bones();
                 ghosttype = "Poltergeist";
             else if (ghosttype.Contains("GallowsGhost"))
                 ghosttype = "GallowsGhost";

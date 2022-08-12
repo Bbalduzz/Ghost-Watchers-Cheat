@@ -15,7 +15,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 ### How to run
 As for now I haven't made an injector, so a monoinjector is needed.
 1. Download **"GhostWatchersESP.dll"**
-2. Download a **monoinjector** (I use [SharpMonoInjector](https://www.unknowncheats.me/forum/unity/408878-sharpmonoinjector-fixed-updated.html))
+2. Download a **monoinjector** (I use [SharpMonoInjector](https://www.unknowncheats.me/forum/downloads.php?do=file&id=34970))
 3. **Run** Ghost Watchers
 4. **Run** SharpMonoInjector (smi_gui.exe)
 5. In the Injector click refresh

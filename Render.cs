@@ -44,6 +44,7 @@ namespace GhostWatchersESP
 
 		public static void DrawGhostBox(float x, float y, float w, float h, Color color, float thickness, string entity, double distance)
 		{
+			// crappy math to render only the angles of the box
 			Vector2 P1 = new Vector2(x, y);
 			Vector2 P2 = new Vector2((x+(w/2))-90, y);
 			Vector2 P3 = new Vector2((x+(w/2))+90, y);

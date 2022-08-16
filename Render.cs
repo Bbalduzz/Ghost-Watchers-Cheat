@@ -56,7 +56,7 @@ namespace GhostWatchersESP
 			Vector2 P10 = new Vector2(x+w, y+h);
 			Vector2 P11 = new Vector2(x+w, (y+(h/2))+150); 
 			Vector2 P12 = new Vector2(x+w, (y+(h/2))-150);
-            DrawLine(P1, P2, color, thickness);
+            		DrawLine(P1, P2, color, thickness);
 			DrawLine(P1, P5, color, thickness);
 			DrawLine(P3, P4, color, thickness);
 			DrawLine(P4, P12, color, thickness);

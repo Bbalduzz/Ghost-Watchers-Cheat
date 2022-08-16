@@ -5,7 +5,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 
 ### Features
 - Ghost ESP
-- Ghost infos (Type, Age, Mood)
+- Ghost infos (Type, Age, Mood, distance)
 - Additional Infos (Temp, Emp, etc..)
 - Players ESP
 - Cursed Item ESP

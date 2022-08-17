@@ -16,7 +16,8 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 - Eject by pressing "J"
 
 ### Preview
-![ghostwatchersESP](https://user-images.githubusercontent.com/81587335/183890235-07917b5f-34a9-4286-9429-bb38c3fa8895.png)
+![gwespv13](https://user-images.githubusercontent.com/81587335/185099226-c40c1cb2-a49d-4aae-8221-33a623722387.png)
+![gwesp](https://user-images.githubusercontent.com/81587335/185099206-80e97985-3f6a-4ae4-b26a-c70c56a2e646.png)
 
 ### How to run
 As for now I haven't made an injector, so a monoinjector is needed.

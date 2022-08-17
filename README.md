@@ -33,7 +33,7 @@ As for now I haven't made an injector, so a monoinjector is needed.
 9. Click Inject
 
 ### Note
-- The code needs a in-depth clean up (too lazy to do it)
+- The code needs a in-depth clean up and optimization (too lazy to do it)
 - This project is still under developement, i'm working to add new things
 - This is my very first project done in c#, there's gonna be **a lot** of errors/bugs/things that could be improved
 

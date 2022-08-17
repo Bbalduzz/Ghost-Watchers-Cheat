@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace GhostWatchersESP
@@ -20,7 +20,7 @@ namespace GhostWatchersESP
 			var upperLeft = centered ? position - size / 2f : position;
 			GUI.Label(new Rect(upperLeft, size), content);
 		}
-
+		public static bool ShowGhostLine = true; // ghost line bool
 		public static Texture2D lineTex;
 		public static void DrawLine(Vector2 pointA, Vector2 pointB, Color color, float width)
 		{
@@ -42,33 +42,36 @@ namespace GhostWatchersESP
 			GUI.color = color2;
 		}
 
-		public static void DrawGhostBox(float x, float y, float w, float h, Color color, float thickness, string entity, double distance)
-		{
-			// crappy math to render only the angles of the box
-			Vector2 P1 = new Vector2(x, y);
-			Vector2 P2 = new Vector2((x+(w/2))-90, y);
-			Vector2 P3 = new Vector2((x+(w/2))+90, y);
-			Vector2 P4 = new Vector2(x+w, y);
-			Vector2 P5 = new Vector2(x, (y+(h/2))-150);
-			Vector2 P6 = new Vector2(x, (y+(h/2))+150);
-			Vector2 P7 = new Vector2(x, y+h);
-			Vector2 P8 = new Vector2((x+(w/2))-90, y+h);
-			Vector2 P9 = new Vector2((x+(w/2))+90, y+h);
-			Vector2 P10 = new Vector2(x+w, y+h);
-			Vector2 P11 = new Vector2(x+w, (y+(h/2))+150); 
-			Vector2 P12 = new Vector2(x+w, (y+(h/2))-150);
-            		DrawLine(P1, P2, color, thickness);
-			DrawLine(P1, P5, color, thickness);
-			DrawLine(P3, P4, color, thickness);
-			DrawLine(P4, P12, color, thickness);
-			DrawLine(P6, P7, color, thickness);
-			DrawLine(P7, P8, color, thickness);
-			DrawLine(P9, P10, color, thickness);
-			DrawLine(P10, P11, color, thickness);
-			GUI.Label(new Rect(x,y,w,h), $"{entity} - [{distance}]");
-		}
+		public static void ShowActions()
+        {
+			int x = Screen.width - 210;
+			int y = Screen.height - 110;
+			GUI.Box(new Rect (x,y,200,130), "Actions");
+			if (GUI.Button(new Rect(x+10,y+30,150,20), "Give Money and EXP"))
+            AddMoneyAndEXP = !AddMoneyAndEXP;
+			if (GUI.Button(new Rect(x+10,y+60,150,20), "Unlock Achivements"))
+            UnlockAllAchievements = !UnlockAllAchievements;
+			if (GUI.Button(new Rect(x+10,y+90,150,20), "Become the Host"))
+            BecomeHost = !BecomeHost;
+        }
+		public static bool AddMoneyAndEXP = false;
+		public static bool UnlockAllAchievements = false;
+		public static bool BecomeHost = false;
 
-		public static void DrawPlayerBox(float x, float y, float w, float h, Color color, float thickness, string entity, double distance)
+		public static void ShowESPSettings()
+        {
+			int x = Screen.width - 210;
+			GUI.Box(new Rect (x,10,200,130), "ESP Settings");
+			if (GUI.Button(new Rect(x+10,40,150,20), "Show Players ESP"))
+            ShowPlayerESP = !ShowPlayerESP;
+			if (GUI.Button(new Rect(x+10,70,150,20), "Show Ghost ESP"))
+            ShowGhostESP = !ShowGhostESP;
+			if (GUI.Button(new Rect(x+10,100,150,20), "Show Ghost SnapLine"))
+            ShowGhostLine = !ShowGhostLine;
+        }
+
+		public static bool ShowGhostESP = true; // ghost esp bol
+		public static void DrawGhostBox(float x, float y, float w, float h, Color color, float thickness, string entity, double distance)
 		{
 			DrawLine(new Vector2(x, y), new Vector2(x + w, y), color, thickness);
 			DrawLine(new Vector2(x, y), new Vector2(x, y + h), color, thickness);
@@ -77,8 +80,21 @@ namespace GhostWatchersESP
 			GUI.Label(new Rect(x,y,w,h), $"{entity} - [{distance}]");
 		}
 
-		public static bool ShowMoreInfos = false;
+		public static bool ShowPlayerESP = true; // player esp bool
+		public static void DrawPlayerBox(float x, float y, float w, float h, Color color, float thickness, string entity, double distance)
+		{
+			if(ShowPlayerESP == true)
+            {
+				DrawLine(new Vector2(x, y), new Vector2(x + w, y), color, thickness);
+				DrawLine(new Vector2(x, y), new Vector2(x, y + h), color, thickness);
+				DrawLine(new Vector2(x + w, y), new Vector2(x + w, y + h), color, thickness);
+				DrawLine(new Vector2(x, y + h), new Vector2(x + w, y + h), color, thickness);
+				GUI.Label(new Rect(x,y,w,h), $"{entity} - [{distance}]");
+            }
+			
+		}
 
+		public static bool ShowMoreInfos = false; // more infos bool
 		public static void GhostInfos(string type, string age, string mood, float temp, float huntdistance, bool cancapture, bool canattack, bool canrageattack, bool canhunt, bool cancrattack, bool isfullweak, int emp_value)
         {
 			GUI.Box(new Rect (10,10,200,150), "Ghost Infos");
@@ -114,7 +130,6 @@ namespace GhostWatchersESP
 				string fw = string.Format("Full Weakness: {0}", isfullweak);
 				GUI.Label(new Rect(20,430,200,20), new GUIContent(fw));
             }
-			
         }
     }
 }

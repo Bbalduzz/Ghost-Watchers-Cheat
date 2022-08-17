@@ -200,12 +200,9 @@ namespace GhostWatchersESP
 
         public static void UnlockAllAchievements()
         {
-            if (Render.UnlockAllAchievements == true)
+            foreach (Donteco.AchievementType a in Enum.GetValues(typeof(Donteco.AchievementType)))
             {
-                foreach (Donteco.AchievementType a in Enum.GetValues(typeof(Donteco.AchievementType)))
-                {
-                    Donteco.AchievementsManager.IncrementAchievementValue(a);
-                }
+                Donteco.AchievementsManager.IncrementAchievementValue(a);
             }
         }
 

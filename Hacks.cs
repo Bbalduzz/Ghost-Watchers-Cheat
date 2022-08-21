@@ -13,9 +13,18 @@ namespace GhostWatchersESP
         public void OnGUI()
         {
             Settings();
-            ghostESP();
-            playerESP();
-            itemESP();
+            if (Render.ShowGhostESP == true)
+            {
+                ghostESP();
+            }
+            if (Render.ShowPlayerESP == true)
+            {
+                playerESP();
+            }
+            if (Render.ShowCursedItem == true)
+            {
+                itemESP();
+            }
             if(Render.AddMoneyAndEXP == true)
             {
                 GiveMoneyAndExp(10000, 1000);
@@ -28,12 +37,26 @@ namespace GhostWatchersESP
             {
                 SetMasterClient();
             }
+            if (Render.MakeApperence == true){Appear();}
+            if (Render.DoRandomAction == true) {RandomAction();}
+            if (Render.DoAttack == true) {DoAttack();}
+            if (Render.DoFastAttack == true) {DoFastAttack();}
+            if (Render.DoHunt == true) {DoHunt();}
+            if (Render.CapturePlayer == true) {DoCapture();}
+            if (Render.MakeNoise == true) {MakeNoise();}
         }
 
         public static void Settings()
         {
             Render.ShowESPSettings();
-            Render.ShowActions();
+            if (Render.ShowPlayerActions == true)
+            {
+                Render.ShowActions();
+            }
+            if (Render.ShowGhostActions == true)
+            {
+                Render.ShowGhostActionsSettings();
+            }
         }
 
         public static void ghostESP()
@@ -54,7 +77,7 @@ namespace GhostWatchersESP
                 string ghostage = ghost.Data.AgeProperties.ToString();
                 float temp = ghost.Data.GetTemperatureValue();
                 int emp = ghost.Data.GetEmpValue();
-                float huntdistance = ghost.Data.DistanceForHunt;
+                string rank = ghost.Data.Rank.ToString();
                 bool cancapture = ghost.CanStartCapture();
                 bool canattack = ghost.CanStartAttack();
                 bool canrageattack = ghost.CanRangeAttack();
@@ -66,7 +89,7 @@ namespace GhostWatchersESP
                     ghostage,
                     ghostmood,
                     temp,
-                    huntdistance,
+                    rank,
                     cancapture,
                     canattack,
                     canrageattack,
@@ -88,10 +111,7 @@ namespace GhostWatchersESP
                     Color color = Color.red;
                     foreach (Donteco.PlayerAnimation player in FindObjectsOfType(typeof(Donteco.PlayerAnimation)) as Donteco.PlayerAnimation[])
                     {
-                        if (Render.ShowGhostESP == true)
-                        {
-                            Render.DrawGhostBox(footpos.x - (width / 2), (float)Screen.height - footpos.y - height, width, height, color, 2f, entity, Math.Round(Vector3.Distance(player.transform.position, ghost.transform.position)));
-                        }
+                        Render.DrawGhostBox(footpos.x - (width / 2), (float)Screen.height - footpos.y - height, width, height, color, 2f, entity, Math.Round(Vector3.Distance(player.transform.position, ghost.transform.position)));
                     }      
                     if (Render.ShowGhostLine == true)
                     {
@@ -105,6 +125,15 @@ namespace GhostWatchersESP
         public static Lobby lobby;
         public static PlayerSetup localplayer;
         public static List<PlayerSetup> network_player;
+        public static Vector3 bHead, bNeck;
+        public static Vector3 bChest, bShoulderR;
+        public static Vector3 bElbowR, bWristR;
+        public static Vector3 bShoulderL, bElbowL;
+        public static Vector3 bWristL, bSpine2;
+        public static Vector3 bHipR, bKneeR;
+        public static Vector3 bAnkleR, bHipL;
+        public static Vector3 bKneeL, bAnkleL;
+        public static Vector3 bSpine1, bHips;
         public static void playerESP()
         {
             foreach (Donteco.PlayerAnimation player in FindObjectsOfType(typeof(Donteco.PlayerAnimation)) as Donteco.PlayerAnimation[])
@@ -139,27 +168,137 @@ namespace GhostWatchersESP
                             if (IsOnScreen(entity.transform))
                             {
                                 nickname = $"{i.Nickname} [{Math.Round(Vector3.Distance(entity.transform.position, Hacks.localplayer.transform.position), 0)}]";
-                            }
-                        }
-                    }
-                   
-                }
-                if (w2s_footpos.z > 0f)
-                {
-                    // players esp
-                    Vector3 footpos = w2s_footpos;
-                    Vector3 headpos = w2s_headpos;
-                    float height = headpos.y - footpos.y;
-                    float widthOffset = 2f;
-                    float width = height / widthOffset;
-                    string entity = nickname;
-                    Color color = Color.blue;
-                    foreach (Donteco.GhostAI ghost in FindObjectsOfType(typeof(Donteco.GhostAI)) as Donteco.GhostAI[])
-                    {
-                        if (Render.ShowPlayerESP == true)
-                        {
-                            Render.DrawPlayerBox(footpos.x - (width / 2), (float)Screen.height - footpos.y - height, width, height, color, 1f, entity, Math.Round(Vector3.Distance(player.transform.position, ghost.transform.position)));
-                        }
+                                if (!entity.IsLocalPlayer)
+                                {
+                                    if (entity.Male.GetComponentInChildren<SkinnedMeshRenderer>() != null && IsOnScreen(entity.transform))
+                                    {
+                                        Transform[] boneEnt = entity.Male.GetComponentInChildren<SkinnedMeshRenderer>().bones;
+                                        int checker = 0;
+                        
+                                        foreach (Transform b in boneEnt)
+                                        {
+
+                                            if (b.name.Contains("Head_"))
+                                            {
+                                                bHead = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Neck_"))
+                                            {
+                                                bNeck = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Chest_"))
+                                            {
+                                                bChest = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Spine2_"))
+                                            {
+                                                bSpine2 = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Spine1_"))
+                                            {
+                                                bSpine1 = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Root_"))
+                                            {
+                                                bHips = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Hip_L"))
+                                            {
+                                                bHipL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Hip_R"))
+                                            {
+                                                bHipR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Knee_L"))
+                                            {
+                                                bKneeL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Knee_R"))
+                                            {
+                                                bKneeR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Ankle_L"))
+                                            {
+                                                bAnkleL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Ankle_R"))
+                                            {
+                                                bAnkleR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Shoulder_R"))
+                                            {
+                                                bShoulderR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Shoulder_L"))
+                                            {
+                                                bShoulderL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Elbow_R"))
+                                            {
+                                                bElbowR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Elbow_L"))
+                                            {
+                                                bElbowL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Wrist_L"))
+                                            {
+                                                bWristL = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                            if (b.name.Contains("Wrist_R"))
+                                            {
+                                                bWristR = Camera.main.WorldToScreenPoint(b.transform.position);
+                                                checker++;
+                                            }
+                                        }
+                        
+                                        if (checker >= 18)
+                                        {
+                                            Render.DrawString(bHead, nickname, Color.yellow);
+                                            Render.DrawBoneLine(bHead, bNeck, Color.green);
+                                            Render.DrawBoneLine(bNeck, bChest, Color.green);
+                                            Render.DrawBoneLine(bChest, bSpine2,Color.green);
+                                            Render.DrawBoneLine(bSpine2, bSpine1, Color.green);
+                                            Render.DrawBoneLine(bSpine1, bHips, Color.green);
+
+                                            Render.DrawBoneLine(bNeck, bShoulderR, Color.green);
+                                            Render.DrawBoneLine(bShoulderR, bElbowR,Color.green);
+                                            Render.DrawBoneLine(bElbowR, bWristR, Color.green);
+
+                                            Render.DrawBoneLine(bNeck, bShoulderL, Color.green);
+                                            Render.DrawBoneLine(bShoulderL, bElbowL, Color.green);
+                                            Render.DrawBoneLine(bElbowL, bWristL, Color.green);
+
+                                            Render.DrawBoneLine(bHips, bHipR, Color.green);
+                                            Render.DrawBoneLine(bHipR, bKneeR, Color.green);
+                                            Render.DrawBoneLine(bKneeR, bAnkleR, Color.green);
+
+                                            Render.DrawBoneLine(bHips, bHipL, Color.green);
+                                            Render.DrawBoneLine(bHipL, bKneeL, Color.green);
+                                            Render.DrawBoneLine(bKneeL, bAnkleL, Color.green);
+                                        }
+                                    }
+                                }
+                             }
+                         }
                     }
                 }
             }
@@ -200,9 +339,12 @@ namespace GhostWatchersESP
 
         public static void UnlockAllAchievements()
         {
-            foreach (Donteco.AchievementType a in Enum.GetValues(typeof(Donteco.AchievementType)))
+            if (Render.UnlockAllAchievements == true)
             {
-                Donteco.AchievementsManager.IncrementAchievementValue(a);
+                foreach (Donteco.AchievementType a in Enum.GetValues(typeof(Donteco.AchievementType)))
+                {
+                    Donteco.AchievementsManager.IncrementAchievementValue(a);
+                }
             }
         }
 
@@ -222,6 +364,83 @@ namespace GhostWatchersESP
             {
                 Loader.Unload();
             }
+        }
+
+        public static GhostAI ghost;
+        public static void Appear()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null) { ghost.Data.Visibility.SetVisibleForTime(3f); }
+        }
+        public static void RandomAction()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null) { ghost.Actions.Random(); }
+        }
+
+        public static void DoAttack()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.ResetCooldowns();
+                ghost.DoCooldownAttack();
+            }
+        }
+
+        public static void DoFastAttack()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.ResetCooldowns();
+                ghost.DoCooldownFastAttack();
+            }
+        }
+
+        public static void DoHunt()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.ResetCooldowns();
+                ghost.DoCooldownHunt();
+            }
+        }
+
+        public static void DoDamage()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.ResetCooldowns();
+                ghost.DoDamage();
+            }
+        }
+
+        public static void DoCapture()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.ResetCooldowns();
+                ghost.DoCooldownCapture();
+            }
+        }
+        public static void Teleport(Vector3 destination)
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            if (ghost != null)
+            {
+                ghost.Movement.Teleport(destination);
+            }
+        }
+
+        public static void MakeNoise()
+        {
+            ghost = UnityEngine.GameObject.FindObjectOfType<GhostAI>();
+            ghost.Audio.PlayInteractBreath();
+            ghost.Audio.PlayWarningRunAttack();
         }
     }
 }

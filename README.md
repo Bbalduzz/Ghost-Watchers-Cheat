@@ -18,6 +18,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 
 ### Preview
 ![gwespv13](https://user-images.githubusercontent.com/81587335/185099226-c40c1cb2-a49d-4aae-8221-33a623722387.png)
+![gw](https://user-images.githubusercontent.com/81587335/185790097-bc7dba5a-9bbb-41c0-8f25-0b2f8d516796.png)
 ![gwesp](https://user-images.githubusercontent.com/81587335/185099206-80e97985-3f6a-4ae4-b26a-c70c56a2e646.png)
 
 ### How to run

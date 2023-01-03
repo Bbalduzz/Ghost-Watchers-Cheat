@@ -32,11 +32,28 @@ As for now I haven't made an injector, so a monoinjector is needed.
 8. Set: `Method Name` = `Init`
 9. Click Inject
 
+### New Injection method (3/01/2k23)
+> Due to SharpMonoInjector closing when scanning for processes, I changed the injection method. This means that if u can still use SharpMonoInjector fine, this is just a second althernative.
+
+The chosen one: [MonoJabber](https://github.com/AWilliams17/MonoJabber), check out the original repo
+1) In the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section download:
+    - `GhostWatchersESP.dll`
+    - `MemTools.dll`
+    - `MonoJabber.exe`
+    - `MonoLoaderDLL.dll`
+    
+And keep them in the same folder
+
+2) Open the game
+3) Open up the cmd where u got this 4 files and run `MonoJabber.exe "Ghost Watchers.exe" "<put_your_path>\GhostWatchersESP.dll" "GhostWatchersESP" "Loader" "Init"`
+
+> I may add in future a batch file to speed up the process
+
 ### Note
 - The code needs a in-depth clean up and optimization (too lazy to do it) == DONE
 - This project is still under developement, i'm working to add new things
 - This is my very first project done in c#, there's gonna be **a lot** of errors/bugs/things that could be improved
 
 ## Support Me
-- if u want to buy me a coffee: [☕️](https://www.buymeacoffee.com/Bbalduzz)
+- if u want to buy me a coffe: [☕️](https://www.buymeacoffee.com/Bbalduzz)
 - Consider starring this project ⭐️ :)

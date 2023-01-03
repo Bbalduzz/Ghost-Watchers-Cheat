@@ -20,6 +20,9 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 ![gw](https://user-images.githubusercontent.com/81587335/185790097-bc7dba5a-9bbb-41c0-8f25-0b2f8d516796.png)
 ![gwesp](https://user-images.githubusercontent.com/81587335/185099206-80e97985-3f6a-4ae4-b26a-c70c56a2e646.png)
 
+https://user-images.githubusercontent.com/81587335/210391010-96bf364d-8a3c-4f27-98f5-9496b095cefc.mp4
+
+
 ### How to run
 As for now I haven't made an injector, so a monoinjector is needed.
 1. Download **"GhostWatchersESP.dll"**
@@ -33,7 +36,7 @@ As for now I haven't made an injector, so a monoinjector is needed.
 9. Click Inject
 
 ### New Injection method (3/01/2k23)
-> Due to SharpMonoInjector closing when scanning for processes, I changed the injection method. This means that if u can still use SharpMonoInjector fine, this is just a second althernative.
+> Due to SharpMonoInjector closing when scanning for processes, I changed the injection method. This means that if u can still use SharpMonoInjector fine, this is just a second alternative.
 
 The chosen one: [MonoJabber](https://github.com/AWilliams17/MonoJabber), check out the original repo
 1) In the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section download:

@@ -10,8 +10,9 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 - Additional Infos (Temp, Emp, etc..)
 - Players ESP
 - Cursed Item ESP
+- House ESP
 - Actions
-  - give money and exp (10000$ per click, 1000exp per click)
+  - give money and exp (a lot per click)
   - Unlock all achivements
   - Become the host
 - Eject by pressing "J"

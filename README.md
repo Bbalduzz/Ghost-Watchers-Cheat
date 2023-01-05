@@ -15,6 +15,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
   - give money and exp (a lot per click)
   - Unlock all achivements
   - Become the host
+- exe Injector
 - Eject by pressing "J"
 
 ### Preview
@@ -48,10 +49,11 @@ The chosen one: [MonoJabber](https://github.com/AWilliams17/MonoJabber), check o
     
 And keep them in the same folder
 
+## Added Injector
+To use just download the zip folder in the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section, extract it and open `GW Injector.exe` with the game opened.
+
 2) Open the game
 3) Open up the cmd where u got this 4 files and run `MonoJabber.exe "Ghost Watchers.exe" "<put_your_path>\GhostWatchersESP.dll" "GhostWatchersESP" "Loader" "Init"`
-
-> I may add in future a batch file to speed up the process
 
 ### Note
 - The code needs a in-depth clean up and optimization (too lazy to do it) == DONE

@@ -28,6 +28,7 @@ https://user-images.githubusercontent.com/81587335/210391010-96bf364d-8a3c-4f27-
 ### How to run
 ## Added Injector
 To use just download the zip folder in the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section, extract it and open `GW Injector.exe` with the game opened.
+For future releases, the injector is made so that you can only change the `GhostWatchersESP.dll` file in the folder. Just download the single dll file, remove the one in the GWC filder and replace it with the new one. (DONT CHANGE NAMES TO THE FILES OR MOVE THEM IN OTHER FOLDERS)
 
 https://user-images.githubusercontent.com/81587335/210766155-e8da3c02-dc2b-4e66-8f94-5d1f4f84f19c.mp4
 

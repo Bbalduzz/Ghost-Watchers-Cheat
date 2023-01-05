@@ -1,4 +1,4 @@
-# Ghost Watchers ESP
+# Ghost Watchers Internal Cheat
 Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regularly (source code not updated with the last release)
 > Last cheat update: 03/01/2023
 

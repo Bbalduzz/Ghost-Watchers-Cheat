@@ -32,7 +32,7 @@ To use just download the zip folder in the [Releases](https://github.com/Bbalduz
 https://user-images.githubusercontent.com/81587335/210766155-e8da3c02-dc2b-4e66-8f94-5d1f4f84f19c.mp4
 
 ### Other methods
-As for now I haven't made an injector, so a monoinjector is needed.
+~As for now I haven't made an injector~, so a monoinjector is needed.
 1. Download **"GhostWatchersESP.dll"**
 2. Download a **monoinjector** (I use [SharpMonoInjector](https://www.unknowncheats.me/forum/downloads.php?do=file&id=34970))
 3. **Run** Ghost Watchers

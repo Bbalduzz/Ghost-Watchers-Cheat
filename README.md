@@ -26,6 +26,12 @@ https://user-images.githubusercontent.com/81587335/210391010-96bf364d-8a3c-4f27-
 
 
 ### How to run
+## Added Injector
+To use just download the zip folder in the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section, extract it and open `GW Injector.exe` with the game opened.
+
+https://user-images.githubusercontent.com/81587335/210766155-e8da3c02-dc2b-4e66-8f94-5d1f4f84f19c.mp4
+
+### Other methods
 As for now I haven't made an injector, so a monoinjector is needed.
 1. Download **"GhostWatchersESP.dll"**
 2. Download a **monoinjector** (I use [SharpMonoInjector](https://www.unknowncheats.me/forum/downloads.php?do=file&id=34970))
@@ -48,9 +54,6 @@ The chosen one: [MonoJabber](https://github.com/AWilliams17/MonoJabber), check o
     - `MonoLoaderDLL.dll`
     
 And keep them in the same folder
-
-## Added Injector
-To use just download the zip folder in the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section, extract it and open `GW Injector.exe` with the game opened.
 
 2) Open the game
 3) Open up the cmd where u got this 4 files and run `MonoJabber.exe "Ghost Watchers.exe" "<put_your_path>\GhostWatchersESP.dll" "GhostWatchersESP" "Loader" "Init"`

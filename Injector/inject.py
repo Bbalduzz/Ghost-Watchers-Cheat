@@ -44,8 +44,8 @@ app.resizable(False, False)
 app.title("BbalduzzGW Injector")
 
 def injection_function():
-    print(f"{os.path.abspath(os.path.join(os.getcwd(), os.pardir))}\\bin\\Debug\\net6.0\\Ghost-Watchers-Internal.dll") #formula 4 debug, not in the release
-    command = f'MonoJabber.exe "Ghost Watchers.exe" "{os.path.abspath(os.path.join(os.getcwd(), os.pardir))}\\bin\\Debug\\net6.0\\Ghost-Watchers-Internal.dll" "Ghost_Watchers_Internal" "Loader" "init"'
+    # print(f"{os.path.abspath(os.path.join(os.getcwd(), os.pardir))}\\bin\\Debug\\net6.0\\Ghost-Watchers-Internal.dll") #formula 4 debug, not in the release
+    command = f'MonoJabber.exe "Ghost Watchers.exe" "{os.path.abspath(os.getcwd())}\\Ghost-Watchers-Internal.dll" "Ghost_Watchers_Internal" "Loader" "init"'
     output = subprocess.check_output(command, shell=True)
     print(output)
     if 'Injection and RuntimeInvoke were successful' in output.decode():
@@ -55,7 +55,7 @@ def injection_function():
         Faililure(output.decode()).mainloop()
 
 def unload_function():
-    command = f'MonoJabber.exe "Ghost Watchers.exe" "{os.path.abspath(os.path.join(os.getcwd(), os.pardir))}\\bin\\Debug\\net6.0\\Ghost-Watchers-Internal.dll" "Ghost_Watchers_Internal" "Loader" "unload"'
+    command = f'MonoJabber.exe "Ghost Watchers.exe" "{os.path.abspath(os.getcwd())}\\Ghost-Watchers-Internal.dll" "Ghost_Watchers_Internal" "Ghost_Watchers_Internal" "Loader" "unload"'
     output = subprocess.check_output(command, shell=True)
     print(output)
     if 'Injection and RuntimeInvoke were successful' in output.decode():

@@ -19,7 +19,7 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 - Eject by pressing "J"
 
 ### Preview
-![gw](https://user-images.githubusercontent.com/81587335/185790097-bc7dba5a-9bbb-41c0-8f25-0b2f8d516796.png)
+![gw](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/assets/81587335/622133e8-ac34-4c75-b162-8ad5d60f6ead)
 ![gwesp](https://user-images.githubusercontent.com/81587335/185099206-80e97985-3f6a-4ae4-b26a-c70c56a2e646.png)
 
 https://user-images.githubusercontent.com/81587335/210391010-96bf364d-8a3c-4f27-98f5-9496b095cefc.mp4

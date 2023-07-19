@@ -24,9 +24,9 @@ Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regu
 
 https://user-images.githubusercontent.com/81587335/210391010-96bf364d-8a3c-4f27-98f5-9496b095cefc.mp4
 
-### Code refactor (19.07.2023)
+## Code refactor (19.07.2023)
 Updated the old source to something more structurated and easier to upscale
-## Added Python injector code
+### Added Python injector code
 - to make it work add the `Ghost-Watcher-Internal.dll` in the same dir and run `py inject.py`
 
 

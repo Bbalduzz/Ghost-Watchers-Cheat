@@ -1,6 +1,6 @@
 # Ghost Watchers Internal Cheat
 Simple internal cheat for Ghost Watchers made in c#. I'll update this cheat regularly (source code not updated with the last release)
-> Last cheat update: 03/01/2023
+> Last cheat update: 19/07/2023
 
 🎈 If u wanto to join the development, share ideas or u are just curious, join the discord: https://discord.gg/6AEdmkXUbS
 

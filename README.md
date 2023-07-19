@@ -29,8 +29,9 @@ Updated the old source to something more structurated and easier to upscale
 ### Added Python injector code
 - to make it work add the `Ghost-Watcher-Internal.dll` in the same dir and run `py inject.py`
 
+----
 
-### How to run
+### How to run (_outdated_)
 ## Added Injector
 To use just download the zip folder in the [Releases](https://github.com/Bbalduzz/Ghost-Watchers-Cheat/releases/tag/GWESP) section, extract it and open `GW Injector.exe` with the game opened.
 For future releases, the injector is made so that you can only change the `GhostWatchersESP.dll` file in the folder. Just download the single dll file, remove the one in the GWC filder and replace it with the new one. (DONT CHANGE NAMES TO THE FILES OR MOVE THEM IN OTHER FOLDERS)
